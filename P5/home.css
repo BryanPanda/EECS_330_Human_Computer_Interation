@@ -1,0 +1,67 @@
+a {
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+#histogram {
+     width: 400px;
+     height: 400px;
+     /*background-color: red;*/
+     opacity: 0.3;
+}
+
+#histogram2 {
+     width: 400px;
+     height: 400px;
+     opacity: 0.3;
+}
+
+#histogram3 {
+     width: 440px;
+     height: 360px;
+     opacity: 0.3;
+}
+
+#histogram4 {
+     width: 440px;
+     height: 360px;
+     opacity: 0.3;
+}
+
+.new-habit {
+    font-size: 200px;
+    opacity: 0.2;
+    color: white;
+    background-color: black;
+}
+
+.create-new-habit {
+    font-size: 200px;
+}
+
+.habit-container {
+    text-align: center;
+}
+
+.back-arrow {
+    font-size: 60px;
+}
+
+.back-arrow-container {
+    height: 40px;
+}
+
+.progress-summary {
+    font-size: 30px;
+}
+
+.text-size {
+    font-size: 50px;
+}
+
+.home-text-size {
+    font-size: 20px;
+}

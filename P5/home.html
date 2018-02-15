@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- import ECharts file -->
+    <script src="echarts.min.js"></script>
+    <script src="home_histogram.js"></script>
+    <!-- <script src="pie.js"></script> -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="home.css" >
+
+    <title>Home Page</title>
+  </head>
+  <body onload="draw()">
+    <dir>LOGO</dir>
+    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <!-- <p class="text-center home-text-size">Past Week's Habits</p> -->
+          <div id="histogram"></div>
+        </div>
+        <div class="col align-self-center">
+            <p class="text-center font-weight-bold"><h5>You Have No Time Logged</h5></p>
+        </div>
+        <div class="col">
+          <!-- <p class="text-center home-text-size">Habit Breakdown</p> -->
+          <div id="histogram2"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h4><p class="text-center">CURRENT HABITS</p></h4>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <a href="start a new habit.html"><i class="material-icons new-habit">add</i></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
