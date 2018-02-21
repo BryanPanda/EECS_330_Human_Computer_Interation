@@ -23,7 +23,7 @@
     } );
     </script>
 
-    <title>start a new habit</title>
+    <title>habit</title>
   </head>
   <body onload="draw()">
     <!-- back arrow -->
@@ -37,8 +37,7 @@
         <div class="form-group row">
           <input class="form-control form-control-lg" type="text" name="habit name" placeholder="Enter new habit name" >
         </div>
-      </form>
-      <br><br>
+      </form><br>
       <!-- log new entry button -->
       <div class="row">
         <div class="col text-center">
@@ -92,14 +91,13 @@
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
-                </div>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal"  onclick="new_entry()">Save changes</button> </div>
               </div>
             </div>
           </div>
 
         </div>
-      </div> <br><br>
+      </div><br>
       <!-- progress summary -->
       <div class="row">
         <div class="col">
@@ -115,7 +113,7 @@
         <div class="col">
           <p class="text-center progress-summary">Keep it up!</p>
         </div>
-      </div><br>
+      </div>
       <!-- progress chart -->
       <div class="row">
         <div class="col">

@@ -26,8 +26,11 @@
           <!-- <p class="text-center home-text-size">Past Week's Habits</p> -->
           <div id="histogram"></div>
         </div>
-        <div class="col align-self-center">
+        <div class="col align-self-center" id="home_old_progress">
             <p class="text-center font-weight-bold"><h5>You Have No Time Logged</h5></p>
+        </div>
+        <div class="col align-self-center" id="home_new_progress">
+            <p class="text-center font-weight-bold" id="home_new_progress"><h5>You Have Spent _____ Minutes On Good Habits</h5></p>
         </div>
         <div class="col">
           <!-- <p class="text-center home-text-size">Habit Breakdown</p> -->
@@ -45,10 +48,17 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col">
+        <div class="col-sm-3">
           <a href="start a new habit.html"><i class="material-icons new-habit">add</i></a>
+        </div>
+        <div class="col-sm-3 habit-container" id="current_habit">
+          <!-- <a href="habit.html"> -->
+          <i class="material-icons create-new-habit">directions_bike</i>
+          <p class="text-center font-weight-bold">Go To Gym</p>
+          <!-- </a> -->
         </div>
       </div>
     </div>
   </body>
 </html>
+
