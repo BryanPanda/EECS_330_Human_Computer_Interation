@@ -19,15 +19,19 @@ a:hover {
 }
 
 #histogram3 {
-     width: 440px;
-     height: 360px;
-     opacity: 0.3;
+    margin: 30px;
+    width: 440px;
+    height: 360px;
+    opacity: 0.3;
+    float: left;
 }
 
 #histogram4 {
+     margin: 30px;
      width: 440px;
      height: 360px;
      opacity: 0.3;
+     float: left;
 }
 
 .new-habit {
@@ -63,4 +67,10 @@ a:hover {
 
 .home-text-size {
     font-size: 20px;
+}
+
+.habit_chart {
+    height: 440px;
+    width: 1200px;
+    margin-left: 80px;
 }
