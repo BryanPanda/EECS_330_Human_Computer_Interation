@@ -75,4 +75,15 @@ function draw() {
 function new_entry() {
     i++;
     draw();
+    var habit_name = localStorage.getItem("habit_name");
+    if (habit_name != document.getElementById("new_habit_name").value) {
+        localStorage.setItem("habit_name", "No Name"); 
+    }
+}
+
+function habit_name(ele) {
+    if(event.key === 'Enter') {
+        localStorage.setItem("habit_name", ele.value);   
+        document.getElementById("log_new_entry").click();
+    }
 }

@@ -5,7 +5,9 @@ var data_habit = [{value:335, name:'Practise a new skill'},{value:310, name:'Rea
 {value:135, name:'Learn Instrument'},{value:1350, name:'Paint'}];
 
 function draw() {
+    // sessionStorage.setItem("habit_name", ) = localStorage.getItem("habit_name");
     var is_new = localStorage.getItem("is_new");
+    var habit_name = localStorage.getItem("habit_name");
     if (sessionStorage.getItem("i") == null || sessionStorage.getItem("i") == 0) {
         is_new = "True";
     }
@@ -15,6 +17,7 @@ function draw() {
         document.getElementById("home_old_progress").style.display = "none";
         input_data_time = data_time;
         input_data_habit = data_habit;
+        document.getElementById("created_habit").innerHTML = habit_name;
     } else {
         document.getElementById("current_habit").style.display = "none";
         document.getElementById("home_new_progress").style.display = "none";

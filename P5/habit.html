@@ -28,21 +28,21 @@
   <body onload="draw()">
     <!-- back arrow -->
     <div class="back-arrow-container">
-      <a href="start a new habit.html"><i class="material-icons back-arrow">arrow_back</i></a>
+      <a href="home.html"><i class="material-icons back-arrow">home</i></a>
     </div>
     <hr><br>
     <div class="container">
       <!-- habit name form -->
-      <form>
+      <div>
         <div class="form-group row">
-          <input class="form-control form-control-lg" type="text" name="habit name" placeholder="Enter new habit name" >
+          <input class="form-control form-control-lg" id="new_habit_name" type="text" name="habit name" placeholder="Enter new habit name" autocomplete="off" onkeydown="habit_name(this)"/>
         </div>
-      </form><br>
+      </div><br>
       <!-- log new entry button -->
       <div class="row">
         <div class="col text-center">
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#recordModal">Log new entry</button>
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" id="log_new_entry" data-target="#recordModal">Log new entry</button>
 
           <!-- Modal -->
           <div class="modal fade" id="recordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
