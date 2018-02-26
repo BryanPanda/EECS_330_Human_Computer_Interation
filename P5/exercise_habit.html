@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- import ECharts file -->
+    <script src="echarts.min.js"></script>
+    <script src="habit_histogram.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="home.css" >
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+    </script>
+
+    <title>habit</title>
+  </head>
+  <body onload="draw()">
+    <!-- home button -->
+    <div class="back-arrow-container">
+      <a href="home.html"><i class="material-icons back-arrow">home</i></a>
+    </div>
+    <hr><br>
+    <div class="container">
+      <!-- habit name form -->
+      <div>
+        <div class="form-group row">
+          <input class="form-control form-control-lg" id="new_habit_name" type="text" name="habit name" placeholder="Name your workout" autocomplete="off" onkeydown="habit_name(this)"/>
+        </div>
+      </div><br>
+      <!-- log new entry button -->
+      <div class="row">
+        <div class="col text-center">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" id="log_new_entry" data-target="#recordModal">Log new entry</button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="recordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Log Information</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!-- data collection form -->
+                  <form>
+                    <!-- length -->
+                    <div class="form-group row">
+                      <label for="length" class="col-md-2 col-form-label">Workout Length (mins):</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" id="length">
+                      </div>
+                    </div>
+                    <!-- weight -->
+                     <div class="form-group row">
+                      <label for="weight" class="col-md-2 col-form-label">Body Weight (lbs):</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" id="weight">
+                      </div>
+                    </div>
+                    <!-- date -->
+                     <div class="form-group row">
+                      <label for="datepicker" class="col-md-2 col-form-label">Date:</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" id="datepicker">
+                      </div>
+                    </div>
+                    <!-- message note -->
+                    <div class="form-group row">
+                      <label for="message-text" class="col-md-2 col-form-label">Notes:</label>
+                      <div class="col-md-10">
+                        <textarea class="form-control" id="message-text"></textarea>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <!-- form button -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                  <button type="button" class="btn btn-primary" data-dismiss="modal"  onclick="new_entry()">Save changes</button> </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div><br>
+      <!-- progress summary -->
+      <div class="row">
+        <div class="col">
+          <p class="text-center progress-summary">In the past month, you've spent _____ minutes exercising.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p class="text-center progress-summary">That's roughly _____ minutes per session, _____ times per week.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p class="text-center progress-summary">Keep it up!</p>
+        </div>
+      </div>
+      <!-- progress chart -->
+      <div class="habit_chart">
+        <!-- <div class="col"> -->
+          <!-- <p class="text-center home-text-size">Past Week's Habits</p> -->
+          <div id="histogram3"></div>
+        <!-- </div> -->
+        <!-- <div class="col"> -->
+          <!-- <p class="text-center home-text-size">Habit Breakdown</p> -->
+          <div id="histogram4"></div>
+        <!-- </div> -->
+      </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

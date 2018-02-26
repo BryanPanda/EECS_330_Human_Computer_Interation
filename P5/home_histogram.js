@@ -1,8 +1,8 @@
 var input_data_time = [0, 0, 0, 0, 0, 0, 0];
 var data_time = [0.9, 1.8, 2.1, 2.5, 2.2, 2.0, 0.7];
 var input_data_habit = [{value:0, name: 'example'},];
-var data_habit = [{value:335, name:'Practise a new skill'},{value:310, name:'Read'},{value:234, name:'Exercise'},
-{value:135, name:'Learn Instrument'},{value:1350, name:'Paint'}];
+var data_habit = [{value:310, name:'Read'},{value:234, name:'Exercise'},
+{value:135, name:'Learn Instrument'}];
 
 function draw() {
     // sessionStorage.setItem("habit_name", ) = localStorage.getItem("habit_name");
@@ -23,7 +23,7 @@ function draw() {
         document.getElementById("home_new_progress").style.display = "none";
     }
 
-    // initialize echarts instance 
+    // initialize echarts instance
     var myChart = echarts.init(document.getElementById('histogram'));
     var myChart2 = echarts.init(document.getElementById('histogram2'));
 
@@ -61,7 +61,7 @@ function draw() {
         legend: {
             orient: 'vertical',
             left: 'left',
-            data: ['Exercise','Read','Learn Instrument','Paint','Practise a new skill']
+            data: ['Exercise','Read','Learn Instrument']
         },
         series : [
         {
@@ -86,5 +86,3 @@ function draw() {
     myChart.setOption(histogram);
     myChart2.setOption(pie);
 }
-
-        

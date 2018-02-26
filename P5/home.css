@@ -34,6 +34,38 @@ a:hover {
      float: left;
 }
 
+#histogram5 {
+    margin: 30px;
+    width: 440px;
+    height: 360px;
+    opacity: 0.3;
+    float: left;
+}
+
+#histogram6 {
+     margin: 30px;
+     width: 440px;
+     height: 360px;
+     opacity: 0.3;
+     float: left;
+}
+
+#histogram7 {
+    margin: 30px;
+    width: 440px;
+    height: 360px;
+    opacity: 0.3;
+    float: left;
+}
+
+#histogram8 {
+     margin: 30px;
+     width: 440px;
+     height: 360px;
+     opacity: 0.3;
+     float: left;
+}
+
 .new-habit {
     font-size: 220px;
     opacity: 0.2;
