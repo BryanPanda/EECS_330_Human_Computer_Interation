@@ -5,7 +5,6 @@ var data_habit = [{value:310, name:'Read'},{value:234, name:'Exercise'},
 {value:135, name:'Learn Instrument'}];
 
 function draw() {
-    // sessionStorage.setItem("habit_name", ) = localStorage.getItem("habit_name");
     var is_new = localStorage.getItem("is_new");
     var habit_name = localStorage.getItem("habit_name");
     var habit_name_instrument = localStorage.getItem("habit_name_instrument");
@@ -30,15 +29,21 @@ function draw() {
     }
 
     if (exercise) {
-        document.getElementById("current_habit").style.display = "none";
+        document.getElementById("exercise_div").style.display = "none";
+    } else {
+        document.getElementById("current_habit").innerHTML = "directions_bike";
     }
 
     if (instrument) {
-        document.getElementById("current_habit_instrument").style.display = "none";
+        document.getElementById("instrument_div").style.display = "none";
+    } else {
+        document.getElementById("current_habit_instrument").innerHTML = "music_note";
     }
 
     if (read) {
-        document.getElementById("current_habit_read").style.display = "none";
+        document.getElementById("read_div").style.display = "none";
+    } else {
+        document.getElementById("current_habit_read").innerHTML = "book";
     }
 
     // initialize echarts instance
