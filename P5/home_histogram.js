@@ -8,7 +8,12 @@ function draw() {
     // sessionStorage.setItem("habit_name", ) = localStorage.getItem("habit_name");
     var is_new = localStorage.getItem("is_new");
     var habit_name = localStorage.getItem("habit_name");
-    if (sessionStorage.getItem("i") == null || sessionStorage.getItem("i") == 0) {
+    var habit_name_instrument = localStorage.getItem("habit_name_instrument");
+    var habit_name_read = localStorage.getItem("habit_name_read");
+    var instrument = sessionStorage.getItem("i_instrument") == null || sessionStorage.getItem("i_instrument") == 0;
+    var exercise = sessionStorage.getItem("i") == null || sessionStorage.getItem("i") == 0;
+    var read = sessionStorage.getItem("i_read") == null || sessionStorage.getItem("i_read") == 0;
+    if (exercise && instrument & read) {
         is_new = "True";
     }
     if (is_new == "False") {
@@ -18,9 +23,22 @@ function draw() {
         input_data_time = data_time;
         input_data_habit = data_habit;
         document.getElementById("created_habit").innerHTML = habit_name;
+        document.getElementById("created_habit_instrument").innerHTML = habit_name_instrument;
+        document.getElementById("created_habit_read").innerHTML = habit_name_read;
     } else {
-        document.getElementById("current_habit").style.display = "none";
         document.getElementById("home_new_progress").style.display = "none";
+    }
+
+    if (exercise) {
+        document.getElementById("current_habit").style.display = "none";
+    }
+
+    if (instrument) {
+        document.getElementById("current_habit_instrument").style.display = "none";
+    }
+
+    if (read) {
+        document.getElementById("current_habit_read").style.display = "none";
     }
 
     // initialize echarts instance
@@ -33,7 +51,7 @@ function draw() {
             text: "Past Week's Habits",
             x: 'center'
         },
-        // tooltip: {},
+        tooltip: {},
         legend: {
             left: 'left',
             data:['Hours']
@@ -54,10 +72,10 @@ function draw() {
             text: 'Habit Breakdown',
             x:'center'
         },
-        // tooltip : {
-        //     trigger: 'item',
-        //     formatter: "{a} <br/>{b} : {c} ({d}%)"
-        // },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
         legend: {
             orient: 'vertical',
             left: 'left',
@@ -65,7 +83,7 @@ function draw() {
         },
         series : [
         {
-            // name: 'habit breakdown',
+            name: 'habit breakdown',
             type: 'pie',
             radius : '55%',
             center: ['50%', '60%'],

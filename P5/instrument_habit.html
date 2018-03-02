@@ -7,7 +7,7 @@
 
     <!-- import ECharts file -->
     <script src="echarts.min.js"></script>
-    <script src="habit_histogram.js"></script>
+    <script src="instrument_histogram.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -30,7 +30,7 @@
     <div class="back-arrow-container">
       <a href="home.html"><i class="material-icons back-arrow">home</i></a>
     </div>
-    <hr><br>
+    <hr>
     <div class="container">
       <!-- habit name form -->
       <div>
@@ -56,34 +56,26 @@
                 </div>
                 <div class="modal-body">
                   <!-- data collection form -->
-                  <form>
+                  <form class="px-2">
                     <!-- length -->
-                    <div class="form-group row">
-                      <label for="length" class="col-md-2 col-form-label">Practice Length (mins):</label>
-                      <div class="col-md-10">
-                        <input type="text" class="form-control" id="length">
-                      </div>
+                    <div class="form-group">
+                      <label for="length" class="float-left">Practice Length (mins):</label>
+                      <input type="text" class="form-control" id="length">
                     </div>
                     <!-- weight -->
-                     <div class="form-group row">
-                      <label for="weight" class="col-md-2 col-form-label">Number of Pieces:</label>
-                      <div class="col-md-10">
-                        <input type="text" class="form-control" id="weight">
-                      </div>
+                     <div class="form-group">
+                      <label for="weight" class="float-left">Number of Pieces:</label>
+                      <input type="text" class="form-control" id="weight">
                     </div>
                     <!-- date -->
-                     <div class="form-group row">
-                      <label for="datepicker" class="col-md-2 col-form-label">Date:</label>
-                      <div class="col-md-10">
-                        <input type="text" class="form-control" id="datepicker">
-                      </div>
+                     <div class="form-group">
+                      <label for="datepicker" class="float-left">Date:</label>
+                      <input type="text" class="form-control" id="datepicker">
                     </div>
                     <!-- message note -->
-                    <div class="form-group row">
-                      <label for="message-text" class="col-md-2 col-form-label">Notes:</label>
-                      <div class="col-md-10">
-                        <textarea class="form-control" id="message-text"></textarea>
-                      </div>
+                    <div class="form-group">
+                      <label for="message-text" class="float-left">Notes:</label>
+                      <textarea class="form-control" id="message-text"></textarea>
                     </div>
                   </form>
                 </div>
@@ -101,12 +93,14 @@
       <!-- progress summary -->
       <div class="row">
         <div class="col">
-          <p class="text-center progress-summary">In the past month, you've spent _____ minutes practicing your instrument.</p>
+          <p class="text-center progress-summary" id="exercise_progress_1_old">In the past month, you've spent _____ minutes exercising.</p>
+          <p class="text-center progress-summary" id="exercise_progress_1_new">In the past month, you've spent <b id="random_1"><font size="6">2400</font></b> minutes exercising.</p>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <p class="text-center progress-summary">That's roughly _____ minutes per session, _____ times per week.</p>
+          <p class="text-center progress-summary" id="exercise_progress_2_old">That's roughly _____ minutes per session, _____ times per week.</p>
+          <p class="text-center progress-summary" id="exercise_progress_2_new">That's roughly <b id="random_2"><font size="6">80</font></b> minutes per session, <b id="random_3"><font size="6">600</font></b> times per week.</p>
         </div>
       </div>
       <div class="row">
@@ -118,11 +112,11 @@
       <div class="habit_chart">
         <!-- <div class="col"> -->
           <!-- <p class="text-center home-text-size">Past Week's Habits</p> -->
-          <div id="histogram3"></div>
+          <div id="histogram5"></div>
         <!-- </div> -->
         <!-- <div class="col"> -->
           <!-- <p class="text-center home-text-size">Habit Breakdown</p> -->
-          <div id="histogram4"></div>
+          <div id="histogram6"></div>
         <!-- </div> -->
       </div>
 

@@ -30,7 +30,7 @@
     <div class="back-arrow-container">
       <a href="home.html"><i class="material-icons back-arrow">home</i></a>
     </div>
-    <hr><br>
+    <hr>
     <div class="container">
       <!-- habit name form -->
       <div>
@@ -56,34 +56,26 @@
                 </div>
                 <div class="modal-body">
                   <!-- data collection form -->
-                  <form>
+                  <form class="px-2">
                     <!-- length -->
-                    <div class="form-group row">
-                      <label for="length" class="col-md-2 col-form-label">Workout Length (mins):</label>
-                      <div class="col-md-10">
-                        <input type="text" class="form-control" id="length">
-                      </div>
+                    <div class="form-group">
+                      <label for="length" class="float-left">Workout Length (mins):</label>
+                      <input type="text" class="form-control" id="length">
                     </div>
                     <!-- weight -->
-                     <div class="form-group row">
-                      <label for="weight" class="col-md-2 col-form-label">Body Weight (lbs):</label>
-                      <div class="col-md-10">
-                        <input type="text" class="form-control" id="weight">
-                      </div>
+                     <div class="form-group">
+                      <label for="weight" class="float-left">Body Weight (lbs):</label>
+                      <input type="text" class="form-control" id="weight">
                     </div>
                     <!-- date -->
-                     <div class="form-group row">
-                      <label for="datepicker" class="col-md-2 col-form-label">Date:</label>
-                      <div class="col-md-10">
-                        <input type="text" class="form-control" id="datepicker">
-                      </div>
+                     <div class="form-group">
+                      <label for="datepicker" class="float-left">Date:</label>
+                      <input type="text" class="form-control" id="datepicker">
                     </div>
                     <!-- message note -->
-                    <div class="form-group row">
-                      <label for="message-text" class="col-md-2 col-form-label">Notes:</label>
-                      <div class="col-md-10">
-                        <textarea class="form-control" id="message-text"></textarea>
-                      </div>
+                    <div class="form-group">
+                      <label for="message-text" class="float-left">Notes:</label>
+                      <textarea class="form-control" id="message-text"></textarea>
                     </div>
                   </form>
                 </div>
@@ -101,12 +93,14 @@
       <!-- progress summary -->
       <div class="row">
         <div class="col">
-          <p class="text-center progress-summary">In the past month, you've spent _____ minutes exercising.</p>
+          <p class="text-center progress-summary" id="exercise_progress_1_old">In the past month, you've spent _____ minutes exercising.</p>
+          <p class="text-center progress-summary" id="exercise_progress_1_new">In the past month, you've spent <b id="random_1"><font size="6">2400</font></b> minutes exercising.</p>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <p class="text-center progress-summary">That's roughly _____ minutes per session, _____ times per week.</p>
+          <p class="text-center progress-summary" id="exercise_progress_2_old">That's roughly _____ minutes per session, _____ times per week.</p>
+          <p class="text-center progress-summary" id="exercise_progress_2_new">That's roughly <b id="random_2"><font size="6">80</font></b> minutes per session, <b id="random_3"><font size="6">600</font></b> times per week.</p>
         </div>
       </div>
       <div class="row">
