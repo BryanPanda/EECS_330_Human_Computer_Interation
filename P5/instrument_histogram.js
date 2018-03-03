@@ -32,6 +32,7 @@ function draw() {
         document.getElementById("exercise_progress_2_new").style.display = "none";
     }
     sessionStorage.setItem("i_instrument", i_instrument);
+    document.getElementById("new_habit_name").value = sessionStorage.getItem("habit_name_instrument");
 
     // initialize echarts instance
     var myChart5 = echarts.init(document.getElementById('histogram5'));
@@ -91,15 +92,15 @@ function draw() {
 function new_entry() {
     i_instrument++;
     draw();
-    var habit_name_instrument = localStorage.getItem("habit_name_instrument");
+    var habit_name_instrument = sessionStorage.getItem("habit_name_instrument");
     if (habit_name_instrument != document.getElementById("new_habit_name").value) {
-        localStorage.setItem("habit_name_instrument", "No Name");
+        sessionStorage.setItem("habit_name_instrument", "No Name");
     }
 }
 
 function habit_name(ele) {
     if(event.key === 'Enter') {
-        localStorage.setItem("habit_name_instrument", ele.value);
+        sessionStorage.setItem("habit_name_instrument", ele.value);
         document.getElementById("log_new_entry").click();
     }
 }

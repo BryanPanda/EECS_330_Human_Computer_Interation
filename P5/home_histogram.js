@@ -6,9 +6,9 @@ var data_habit = [{value:310, name:'Read'},{value:234, name:'Exercise'},
 
 function draw() {
     var is_new = localStorage.getItem("is_new");
-    var habit_name = localStorage.getItem("habit_name");
-    var habit_name_instrument = localStorage.getItem("habit_name_instrument");
-    var habit_name_read = localStorage.getItem("habit_name_read");
+    var habit_name = sessionStorage.getItem("habit_name");
+    var habit_name_instrument = sessionStorage.getItem("habit_name_instrument");
+    var habit_name_read = sessionStorage.getItem("habit_name_read");
     var instrument = sessionStorage.getItem("i_instrument") == null || sessionStorage.getItem("i_instrument") == 0;
     var exercise = sessionStorage.getItem("i") == null || sessionStorage.getItem("i") == 0;
     var read = sessionStorage.getItem("i_read") == null || sessionStorage.getItem("i_read") == 0;

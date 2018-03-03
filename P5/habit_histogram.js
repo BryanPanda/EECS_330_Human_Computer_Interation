@@ -22,13 +22,14 @@ function draw() {
         document.getElementById("exercise_progress_2_old").style.display = "none";
         document.getElementById("exercise_progress_2_new").style.display = "block";
         document.getElementById("random_1").innerHTML = Math.ceil(1000 * (2 + Math.random()));
-        document.getElementById("random_2").innerHTML = Math.ceil(50 *  (1 + Math.random()));
+        document.getElementById("random_2").innerHTML = Math.ceil(50 * (1 + Math.random()));
         document.getElementById("random_3").innerHTML = Math.ceil(250 * (2 + Math.random()));
     } else {
         document.getElementById("exercise_progress_1_new").style.display = "none";
         document.getElementById("exercise_progress_2_new").style.display = "none";
     }
     sessionStorage.setItem("i", i);
+    document.getElementById("new_habit_name").value = sessionStorage.getItem("habit_name");
 
     // initialize echarts instance
     var myChart3 = echarts.init(document.getElementById('histogram3'));
@@ -86,15 +87,15 @@ function draw() {
 function new_entry() {
     i++;
     draw();
-    var habit_name = localStorage.getItem("habit_name");
+    var habit_name = sessionStorage.getItem("habit_name");
     if (habit_name != document.getElementById("new_habit_name").value) {
-        localStorage.setItem("habit_name", "No Name");
+        sessionStorage.setItem("habit_name", "No Name");
     }
 }
 
 function habit_name(ele) {
     if(event.key === 'Enter') {
-        localStorage.setItem("habit_name", ele.value);
+        sessionStorage.setItem("habit_name", ele.value);
         document.getElementById("log_new_entry").click();
     }
 }
