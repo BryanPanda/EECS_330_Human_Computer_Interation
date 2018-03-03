@@ -9,6 +9,10 @@ if (sessionStorage.getItem("i_instrument") != null) {
 }
 
 function draw() {
+    $( "#new_habit_name" ).change(function() {
+        sessionStorage.setItem("habit_name_instrument", document.getElementById("new_habit_name").value);
+    });
+    
     if (i_instrument > 0) {
         for (j = 0; j < i_instrument; j++) {
             input_data_time[j] = data_time[j];
@@ -100,7 +104,7 @@ function new_entry() {
 
 function habit_name(ele) {
     if(event.key === 'Enter') {
-        sessionStorage.setItem("habit_name_instrument", ele.value);
+        // sessionStorage.setItem("habit_name_instrument", ele.value);
         document.getElementById("log_new_entry").click();
     }
 }

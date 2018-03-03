@@ -8,7 +8,13 @@ if (sessionStorage.getItem("i") != null) {
     i = sessionStorage.getItem("i");
 }
 
+
+
 function draw() {
+    $( "#new_habit_name" ).change(function() {
+        sessionStorage.setItem("habit_name", document.getElementById("new_habit_name").value);
+    });
+
     if (i > 0) {
         for (j = 0; j < i; j++) {
             input_data_time[j] = data_time[j];
@@ -95,7 +101,7 @@ function new_entry() {
 
 function habit_name(ele) {
     if(event.key === 'Enter') {
-        sessionStorage.setItem("habit_name", ele.value);
+        // sessionStorage.setItem("habit_name", ele.value);
         document.getElementById("log_new_entry").click();
     }
 }
