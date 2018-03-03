@@ -12,7 +12,7 @@ function draw() {
     $( "#new_habit_name" ).change(function() {
         sessionStorage.setItem("habit_name_read", document.getElementById("new_habit_name").value);
     });
-    
+
     if (i_read > 0) {
         for (j = 0; j < i_read; j++) {
             input_data_time[j] = data_time[j];
@@ -90,13 +90,22 @@ function draw() {
     myChart8.setOption(option8);
 }
 
-
 function new_entry() {
-    i_read++;
-    draw();
-    var habit_name_read = sessionStorage.getItem("habit_name_read");
-    if (habit_name_read != document.getElementById("new_habit_name").value) {
-        sessionStorage.setItem("habit_name_read", "No Name");
+    var length = document.getElementById("length").value;
+    var weight = document.getElementById("weight").value;
+    var datepicker = $("#datepicker").val();
+    if (length == "" || weight == "" || datepicker == "") {
+        alert("Empty Entry!");
+    } else {
+        i_read++;
+        draw();
+        var habit_name_read = sessionStorage.getItem("habit_name_read");
+        if (habit_name_read != document.getElementById("new_habit_name").value) {
+            sessionStorage.setItem("habit_name_read", "No Name");
+        }
+        document.getElementById("length").value = "";
+        document.getElementById("weight").value = "";
+        document.getElementById("datepicker").value = "";
     }
 }
 
