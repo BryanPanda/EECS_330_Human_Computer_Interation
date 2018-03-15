@@ -1,7 +1,7 @@
 var input_data_time = [0, 0, 0, 0, 0, 0, 0];
 var data_time = [0.9, 1.8, 2.1, 2.5, 2.2, 2.0, 0.7];
 var input_data_habit = [{value:0, name: 'example'},];
-var data_habit = [{value:310, name:'Read'},{value:234, name:'Exercise'},
+var data_habit = [{value:310, name:'Exercise'},{value:234, name:'Read'},
 {value:135, name:'Learn Instrument'}];
 
 function draw() {
@@ -59,7 +59,8 @@ function draw() {
         tooltip: {},
         legend: {
             left: 'left',
-            data:['Hours']
+            data:['Hours'],
+            // textStyle: {fontWeight: 'bolder', fontSize: '15'},
         },
         xAxis: {
             data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
@@ -68,7 +69,12 @@ function draw() {
         series: [{
             name: 'Hours',
             type: 'bar',
-            data: input_data_time
+            data: input_data_time,
+            itemStyle: {
+                emphasis: {
+
+                }
+            }
         }]
     };
 
@@ -84,11 +90,13 @@ function draw() {
         legend: {
             orient: 'vertical',
             left: 'left',
+            // textStyle: {fontWeight: 'bolder', fontSize: '15'},
             data: ['Exercise','Read','Learn Instrument']
         },
+        color:["rgb(190, 0, 0)", "#00802b", "rgb(0, 0, 204)"],
         series : [
         {
-            name: 'habit breakdown',
+            name: 'habit breakdown (mins)',
             type: 'pie',
             radius : '55%',
             center: ['50%', '60%'],
@@ -98,7 +106,7 @@ function draw() {
                 emphasis: {
                     shadowBlur: 10,
                     shadowOffsetX: 0,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    shadowColor: 'rgba(0, 0, 0, 0.5)',
                 }
             }
         }

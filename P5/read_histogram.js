@@ -60,6 +60,11 @@ function draw() {
         series: [{
             name: 'Hours',
             type: 'bar',
+            itemStyle: {
+                normal: {
+                    color: '#00802b'
+                }
+            },
             data: input_data_time
         }]
     };
@@ -81,6 +86,11 @@ function draw() {
         series: [{
             name: 'Pages',
             type: 'bar',
+            itemStyle: {
+                normal: {
+                    color: '#00802b'
+                }
+            },
             data: input_data_weight
         }]
     };
